@@ -1,0 +1,18 @@
+/* bestlook with 80% UI zoom */
+
+:root {
+  --blfont1: 19px FixedFixedsys, monospace;
+}
+
+
+/* default fontsize*/
+.tab-position .tab,       /* tab */
+.info,                    /* settings info text */
+.vivaldi-settings h2,     /* settings header */
+#browser, #browser + div, /* settings common */
+#browser + div + div,     /* settings common */
+.toolbar-statusbar,
+.button-popup
+{
+  font: var(--blfont1);
+}

@@ -1,0 +1,15 @@
+:root {
+  --statusbg: #3D6683;
+  --statusfg: #EEEEEC;
+}
+
+
+.toolbar-mainbar {
+  background-color: var(--statusbg);
+  color: var(--statusfg);
+}
+
+.toolbar-statusbar {
+  background-color: inherit;
+  color: inherit;
+}

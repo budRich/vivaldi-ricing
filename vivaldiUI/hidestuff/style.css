@@ -1,0 +1,19 @@
+
+/* use default window decorations to be able 
+   to hide the #header bar, menu can still be 
+   accessed with Alt key */
+
+/* the addressfield is hiddens since it's 
+   functionality is better done with vb4c,
+   or with quickmenu (F2) */
+
+#header,
+button.vivaldi,
+.toggle-trash,
+.button-toolbar.newtab,
+.addressfield,
+.button-toolbar.reset-zoom,
+.page-zoom-controls input[type="range"]
+{
+  display: none;
+}
