@@ -18,28 +18,28 @@ OBS! VIM_COMMAND is renamed VB4C_VIM_COMMAND, which
 defaults to the environment variable with the same name.
 Or "gvim -f" if not set.
 
-This version will execute a VB4C_ALT_COMMAND if the
+This version will instead execute a command if the
 first word posted in a message to the server matches
-EXEC_WORD and pass the rest of the message as arguments.
+EXEC_WORD and exectute the rest of the message as a command.
 
 below is an example from my cvimrc (VB4C_EXEC_WORD = brwscon)
-that will execute VB4C_ALT_COMMAND with a URL as the only
+that will execute 'notify-send' with a URL as the only
 argument. (S : current page, s : from hint)
 ...
 
 let vimport = 8065
 
 externalCommandHint(link) -> {{
-  var text = link.href || link.value || link.getAttribute('placeholder');
+  var url = link.href || link.value || link.getAttribute('placeholder');
   PORT('editWithVim', {
-    text: 'brwscon ' + (text)
+    text: `brwscon notify-send ${url}`
   });
 }}
 
 externalCommandPage -> {{
-  var text = document.URL;
+  var url = document.URL;
   PORT('editWithVim', {
-    text: 'brwscon ' + (text)
+    text: `brwscon notify-send ${url}`
   });
 }}
 
@@ -55,7 +55,6 @@ must be running and executed something like this:
 
 VB4C_PORT=8065                 \
 VB4C_VIM_COMMAND='subl -w'     \
-VB4C_ALT_COMMAND='notify-send' \
 VB4C_EXEC_WORD=brwscon         \
 ./vb4c_server.py
 
@@ -69,10 +68,9 @@ import subprocess
 from tempfile import mkstemp
 from http.server import HTTPServer, BaseHTTPRequestHandler
 
-VB4C_PORT = os.getenv("VB4C_PORT", 8001)
-VB4C_VIM_COMMAND = os.getenv("VB4C_PORT", 'gvim -f')
-VB4C_ALT_COMMAND = os.getenv("VB4C_PORT", 'notify-send')
-VB4C_EXEC_WORD = os.getenv("VB4C_PORT", 'vb4cconnect')
+VB4C_PORT = int(os.getenv("VB4C_PORT", 8001))
+VB4C_VIM_COMMAND = os.getenv("VB4C_VIM_COMMAND", 'gvim -f')
+VB4C_EXEC_WORD = os.getenv("VB4C_EXEC_WORD", 'vb4cconnect')
 
 
 def edit_file(content):
@@ -88,29 +86,27 @@ def edit_file(content):
 
 
 class CvimServer(BaseHTTPRequestHandler):
+
     def do_POST(self):
         length = int(self.headers['Content-Length'])
         content_str = self.rfile.read(length).decode('utf8')
         content = loads(content_str)
+        self.send_response(200)
+        self.send_header('Content-Type', 'text/plain')
+        self.end_headers()
 
         brwschk = content['data'].split()
 
-        if brwschk[0] == VB4C_EXEC_WORD:
-            subprocess.call([VB4C_ALT_COMMAND, brwschk[1:]])
+        # Block XMLHttpRequests originating from non-Chrome extensions
+        if not self.headers.get('Origin', '').startswith('chrome-extension'):
+            edit = ''
+        elif brwschk[0] == VB4C_EXEC_WORD:
+            subprocess.call(brwschk[1:])
+            edit = ''
         else:
-            self.send_response(200)
-            self.send_header('Content-Type', 'text/plain')
-            self.end_headers()
+            edit = edit_file(content['data'])
 
-            # Block XMLHttpRequests originating from non-Chrome extensions
-            if not self.headers.get('Origin', '').startswith('chrome-extension'):
-                edit = ''
-            else:
-                subprocess.call(['sublaunch', '-p', 'tmp'])
-                edit = edit_file(content['data'])
-
-            self.wfile.write(edit.encode('utf8'))
-            subprocess.call('browser')
+        self.wfile.write(edit.encode('utf8'))
 
 
 def init_server(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
