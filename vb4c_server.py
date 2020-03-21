@@ -53,9 +53,9 @@ must be running and executed something like this:
 
 (backslash escapes new line)
 
-VB4C_PORT=8065                 \
-VB4C_VIM_COMMAND='subl -w'     \
-VB4C_EXEC_WORD=brwscon         \
+VB4C_PORT=8065                                        \
+VB4C_VIM_COMMAND='sublaunch --profile subltmp --wait' \
+VB4C_EXEC_WORD=brwscon                                \
 ./vb4c_server.py
 
 '''
@@ -96,13 +96,16 @@ class CvimServer(BaseHTTPRequestHandler):
         self.end_headers()
 
         brwschk = content['data'].split()
+        edit = ''
 
-        # Block XMLHttpRequests originating from non-Chrome extensions
+        # Block XMLHttpRequests originating from
+        # non-Chrome extensions
         if not self.headers.get('Origin', '').startswith('chrome-extension'):
-            edit = ''
+            pass
+
         elif brwschk[0] == VB4C_EXEC_WORD:
             subprocess.call(brwschk[1:])
-            edit = ''
+
         else:
             edit = edit_file(content['data'])
 
