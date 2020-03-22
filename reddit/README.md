@@ -13,7 +13,7 @@ If you have [stylus] and [violentmonkey] installed you can install the files by 
 
 | file | function |
 |:-----|:---------|
-[reddit-theme.user.css] | applies better colors, which are set from a set of custom properties (*css variables*), so they can easily be changed. |
+[reddit-theme.user.css] | applies better colors, which are applied from a set of custom properties (*CSS variables*), so they can easily be changed. |
 
 [reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/theme/reddit-theme.user.css
 
@@ -24,9 +24,9 @@ For this rice to work ~~correctly~~, one must first make sure that reddit is dis
 The *easiest* way to achieve that is to install these two external **userscripts**:  
 [reddit old school] - this will redirect any visits to nu-reddit to old.reddit.com, and includes a couple of enhancements (page will scroll to the latest expanded item, and such). It *just werks™*.  
 
-[reddit toggle custom css] lets you toggle between the default css and subreddit specific css from the (grease|tamper|violent)-monkey menu. (selection is remebered across sessions). 
+[reddit toggle custom css] lets you toggle between the default CSS and subreddit specific CSS from the (grease|tamper|violent)-monkey menu. (selection is remembered across sessions). 
 However the default is to show subreddit specific css, 
-but the can be inversed by changing the line:  
+but that can be inversed by changing the line:  
 `const DISABLE_CSS = false`  
 to  
 `const DISABLE_CSS = true`  
