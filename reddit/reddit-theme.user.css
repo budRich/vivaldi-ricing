@@ -1,13 +1,13 @@
 /* ==UserStyle==
-@name           reddit theme
+@name           reddit - theme
 @namespace      budlabs
 @version        1.0.0
 @description    A new userstyle
 @author         budRich
 ==/UserStyle== */
+/* inspiration: https://github.com/itsamoreh/reddit-no-frills */
 
 @-moz-document domain("reddit.com") {
-/*    inspiration: https://github.com/itsamoreh/reddit-no-frills */
 
   body {
     --redditbg: #FCFCFC;
@@ -68,6 +68,10 @@
   .side {
     border: 1px solid var(--reddithl) !important;
     background: var(--redditbg) !important;
+  }
+
+  .side::before {
+    color: var(--redditfg2);
   }
 
   .side:hover::before {

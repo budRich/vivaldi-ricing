@@ -1,0 +1,38 @@
+/* ==UserStyle==
+@name           reddit - dirthack
+@namespace      budlabs
+@version        1.0.0
+@description    aesthetic fixes that works with, expando-swap.user.js
+@author         budRich
+==/UserStyle== */
+
+@-moz-document domain("reddit.com") {
+  
+  #siteTable, .content {
+    width: 70vw;
+    max-width: 666px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  
+  .score.unvoted { display: block ; text-align: right; }
+  .midcol {float: right ; padding-top: 5px; }
+  .thumbnail { width: 140px; }
+
+  .thing { margin: 1rem 0; }
+  .rank { display: none ; }
+
+  .expando-button.video { height: auto; }
+  .expando-button.hide-when-pinned.video.thumbnail.expanded img {
+    opacity: 0;
+  }
+  
+  .expando-button.hide-when-pinned.video.thumbnail.expanded {
+    width: 23px;
+    height: 23px;
+  }
+
+  
+}

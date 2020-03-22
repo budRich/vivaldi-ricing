@@ -1,0 +1,55 @@
+/* ==UserStyle==
+@name           reddit - sidebar
+@namespace      budlabs
+@version        1.0.0
+@description    Hides the sidebar by default and adds a button to toggle it + some aesthethic improvements.
+@author         budRich
+==/UserStyle== */
+
+@-moz-document domain("reddit.com") {
+  
+  /*  inspiration: Reddit Stilig Mod -- 
+      https://userstyles.org/styles/88599/reddit-stilig-mod 
+  */
+
+  .side {
+    position: fixed !important;
+    top: 0px !important;
+    right: -400px !important;
+    z-index: 1000 !important;
+    float: right !important;
+    overflow-y:auto !important;
+    padding: 10px 40px 10px 40px !important;
+    width: 300px !important;
+    height:100% !important;
+    transition-duration:0.4s !important;
+  }
+
+  .side::before {
+    position: fixed !important;
+    top: 1px !important;
+    right: 0% !important;
+    z-index: 5;
+    margin-right: 0px !important;
+    padding-top: 0px !important;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    height: 21px !important;
+    background: transparent!important;
+    content: "◨";
+    text-align: center !important;
+    font-size: 14px !important;
+    transition: 2s color ease;
+  }
+
+  .side:hover::before {
+    transition: 2s color ease;
+  }
+
+  .side:hover {
+    position: fixed !important;
+    right: -20px !important;
+  }
+}

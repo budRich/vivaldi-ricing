@@ -1,0 +1,20 @@
+/* ==UserStyle==
+@name           reddit - no account
+@namespace      budlabs
+@version        1.0.0
+@description    Hides elements that are of no use without a reddit account
+@author         budRich
+==/UserStyle== */
+
+@-moz-document domain("reddit.com") {
+  #sr-header-area,
+  #header-bottom-right,
+  section.infobar.listingsignupbar,
+  form#login_login-main,
+  .arrow,
+  .premium-banner,
+  .subscribe-button,
+  .morelink,
+  .commentsignupbar
+  { display: none ;}
+}

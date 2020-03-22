@@ -1,0 +1,15 @@
+/* ==UserStyle==
+@name           reddit - no bloat
+@namespace      budlabs
+@version        1.0.0
+@description    hides ad and "promoted" elements
+@author         budrich
+==/UserStyle== */
+
+@-moz-document domain("reddit.com") {
+  .ad-container,
+  .promotedlink,
+  #header-img,
+  .footer.rounded
+  { display: none !important;}
+}

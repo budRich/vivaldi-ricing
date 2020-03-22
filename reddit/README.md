@@ -14,8 +14,16 @@ If you have [stylus] and [violentmonkey] installed you can install the files by 
 | file | function |
 |:-----|:---------|
 [reddit-theme.user.css] | applies better colors, which are applied from a set of custom properties (*CSS variables*), so they can easily be changed. |
+[reddit-sidebar.user.css] | Hides the sidebar by default and adds a button to toggle it + some aesthetic improvements. |
+[reddit-no-bloat.user.css] | hides ad and "promoted" elements |
+[reddit-no-account.user.css] | Hides elements that are of no use without a reddit account |
+[reddit-dirthack.user.css] | aesthetic fixes that works with, expando-swap.user.js |
 
-[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/theme/reddit-theme.user.css
+[reddit-dirthack.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-dirthack.user.css
+[reddit-no-account.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-no-account.user.css
+[reddit-no-bloat.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-no-bloat.user.css
+[reddit-sidebar.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-sidebar.user.css
+[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-theme.user.css
 
 ## but first, return to the past
 
