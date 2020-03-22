@@ -34,3 +34,12 @@ https://github.com/openstyles/stylus
 .user.css
 
 https://violentmonkey.github.io/
+
+## userscripts
+
+| script                        | function    |
+|:------------------------------|:------------|
+[userstyles.org-no-placeholder] | hides ad entries in style list
+
+
+[userstyles.org-no-placeholder]: https://github.com/budRich/vivaldi-ricing/raw/master/userscripts/userstyles.org-no-placeholder.user.js
