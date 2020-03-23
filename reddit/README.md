@@ -19,11 +19,11 @@ If you have [stylus] and [violentmonkey] installed you can install the files by 
 [reddit-no-account.user.css] | Hides elements that are of no use without a reddit account |
 [reddit-dirthack.user.css] | aesthetic fixes that works with, expando-swap.user.js |
 
-[reddit-dirthack.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-dirthack.user.css
-[reddit-no-account.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-no-account.user.css
-[reddit-no-bloat.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-no-bloat.user.css
-[reddit-sidebar.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-sidebar.user.css
-[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/userstyles/reddit-theme.user.css
+[reddit-dirthack.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-dirthack.user.css
+[reddit-no-account.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-no-account.user.css
+[reddit-no-bloat.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-no-bloat.user.css
+[reddit-sidebar.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-sidebar.user.css
+[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-theme.user.css
 
 ## but first, return to the past
 

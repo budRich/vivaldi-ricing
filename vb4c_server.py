@@ -27,25 +27,32 @@ that will execute 'notify-send' with a URL as the only
 argument. (S : current page, s : from hint)
 ...
 
-let vimport = 8065
+let vimport = 8064
 
-externalCommandHint(link) -> {{
-  var url = link.href || link.value || link.getAttribute('placeholder');
-  PORT('editWithVim', {
-    text: `brwscon notify-send ${url}`
-  });
+externalCommand(link) -> {{
+
+  const COMMAND   = 'notify-send'
+  const EXEC_WORD = 'brwscon'
+
+  const FIELD_SEPARATOR  = "\x1c"
+  const URL = (link ? link.href || link.value : document.URL)
+
+  let args = [
+    COMMAND,
+    URL,
+  ]
+
+  cmd = EXEC_WORD
+  for (let arg of args) {
+    cmd += arg.replace(/^.+$/,FIELD_SEPARATOR + arg)
+  }
+
+  PORT('editWithVim', { text: cmd })
+
 }}
 
-externalCommandPage -> {{
-  var url = document.URL;
-  PORT('editWithVim', {
-    text: `brwscon notify-send ${url}`
-  });
-}}
-
-map S :call externalCommandPage<CR>
-map s createScriptHint(externalCommandHint)
-
+map S :call externalCommand<CR>
+map s createScriptHint(externalCommand)
 ...
 
 for the commands in the example to work, this script
@@ -53,9 +60,8 @@ must be running and executed something like this:
 
 (backslash escapes new line)
 
-VB4C_PORT=8065                                        \
-VB4C_VIM_COMMAND='sublaunch --profile subltmp --wait' \
-VB4C_EXEC_WORD=brwscon                                \
+VB4C_PORT=8064         \
+VB4C_EXEC_WORD=brwscon \
 ./vb4c_server.py
 
 '''
@@ -67,6 +73,7 @@ from json import loads
 import subprocess
 from tempfile import mkstemp
 from http.server import HTTPServer, BaseHTTPRequestHandler
+
 
 VB4C_PORT = int(os.getenv("VB4C_PORT", 8001))
 VB4C_VIM_COMMAND = os.getenv("VB4C_VIM_COMMAND", 'gvim -f')
@@ -95,7 +102,7 @@ class CvimServer(BaseHTTPRequestHandler):
         self.send_header('Content-Type', 'text/plain')
         self.end_headers()
 
-        brwschk = content['data'].split()
+        brwschk = content['data'].split(u'\x1c')
         edit = ''
 
         # Block XMLHttpRequests originating from
