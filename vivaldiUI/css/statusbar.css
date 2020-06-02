@@ -1,0 +1,10 @@
+
+.toolbar-mainbar > .button-toolbar > button, 
+.toolbar-mainbar > .toolbar-group > .button-toolbar > button {  
+    min-width: 24px;
+    height: 24px;
+}
+
+.page-zoom-controls .zoom-percent {
+  width: auto;
+}

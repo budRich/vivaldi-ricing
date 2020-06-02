@@ -1,0 +1,8 @@
+.pageload,
+.toggle-trash,
+.button-toolbar.newtab,
+.toolbar-addressbar,
+.button-toolbar.reset-zoom,
+.page-zoom-controls input[type="range"],
+#header
+{ display: none; }
