@@ -1,11 +1,10 @@
 
 ## extension
 
-[vb4c]: https://github.com/dcchambers/vb4c
-[stylus]: https://github.com/openstyles/stylus
-[violentmonkey]: https://violentmonkey.github.io/
-[Redirector]: http://einaregilsson.com/redirector/
-
+[vb4c]  
+[stylus]  
+[violentmonkey]  
+[Redirector]  
 
 ## userscripts
 
@@ -15,3 +14,7 @@
 
 
 [userstyles.org-no-placeholder]: https://github.com/budRich/vivaldi-ricing/raw/master/userscripts/userstyles.org-no-placeholder.user.js
+[vb4c]: https://github.com/dcchambers/vb4c
+[stylus]: https://github.com/openstyles/stylus
+[violentmonkey]: https://violentmonkey.github.io/
+[Redirector]: http://einaregilsson.com/redirector/
