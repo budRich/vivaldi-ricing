@@ -1,4 +1,11 @@
-This directory contains overrides for Vivaldis UI elements.
+![](scrot.png)
+
+This is how I like my vivaldi, I merge all *important* elements from the addressbar in to the statusbar and then hide the addressbar (i get the actual address functionality with [vb4c](../vb4c)).
+
+I also have **settings->Appearance->User Interface Zoom** set to `80%` to get a even more space for actual content.
+
+![](uisettings.png)
+
 All UI is done with HTML, javascript and CSS.
 The UI can be *inspected* like any other webpage (right click an element, f.i. the address bar and select **Inspect**) 
 if vivaldi is started with the following commandline options:  
@@ -35,8 +42,18 @@ javascript overrides are not fully supported and there are several drawbacks one
 
 To simplify the process of adding and updating (this needs to be done on every update of the browser) there is a script in the [js](./js/) directory called [vivaldi-add-js.sh](./js/vivaldi-add-js.sh). When the script is executed it will add all `.js` files in the same directory as the script. 
 
-# Known Issues
+--
+## [ext-in-status.js](./js/ext-in-status.js)
+
+This mod will move the extension buttons into the statusbar. 
+It will also move the "add bookmark" and "reader mode" buttons from the address bar to the statusbar. It is based on a [script by **luetage** that i found in the modification section of the vivaldi forums](https://forum.vivaldi.net/topic/20643/showing-extension-icons-on-the-bottom-of-the-browser/43?lang=en-US&page=3).
+
+Many of the style overrides in the [css](./css) directory are necessary for this not looking to broken.
+
+## Known Issues
 if you apply [ext-in-status.js](./js/ext-in-status.js) be aware that fullscreen functionality will stop working. A workaround is to use **picture-in-picture** mode and fullscreen the external player (imo this works better then the default fullscreen).  
+
+It is also important that the addressbar and the statusbar both are located at the top or both at the bottom before applying this mod, otherwise the popups that appeares when an extensionbutton is clicked will not be visible.
 
 ```
 *todo*  
