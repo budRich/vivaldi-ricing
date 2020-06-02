@@ -1,0 +1,132 @@
+let homedirectory = '/home/bud'
+let @@config = '~/git/bud/vivaldi-ricing/vb4c/config'
+let configpath = @@config
+map <A-r> :source @@config<CR>
+set localconfig
+
+site '*://app.pluralsight.com/course-player*' {
+      unmap k
+}
+
+
+let vimport = 8054
+
+externalCommand(link) -> {{
+
+  const COMMAND   = 'gurl'
+  const EXEC_WORD = 'secretpassword'
+
+  const FIELD_SEPARATOR  = "\x1c"
+  const URL = (link ? link.href || link.value : document.URL)
+
+  let args = [
+    COMMAND,
+    URL,
+  ]
+
+  cmd = EXEC_WORD
+  for (let arg of args) {
+    cmd += arg.replace(/^.+$/,FIELD_SEPARATOR + arg)
+  }
+
+  PORT('editWithVim', { text: cmd })
+
+}}
+
+map S :call externalCommand<CR>
+map s createScriptHint(externalCommand)
+
+" >> keys
+map K previousTab
+map J nextTab
+map d closeTab
+map Q moveTabLeft
+map W moveTabRight
+
+map i goToInput
+" map gi goToLastInput
+map gi createImageHint
+
+map I fullImageHint
+
+imap <C-e> editWithVim
+map e createEditHint
+
+" >> qmark
+
+let qmark a = 'https://bbs.archlinux.org/search.php?action=show_new'
+let qmark g = 'https://www.github.com/'
+let qmark i = 'https://www.inoreader.com/folder/bubb.la'
+let qmark l = 'https://lainchan.org/%CE%BB/catalog.html'
+let qmark m = 'https://mail.google.com'
+let qmark t = 'https://10fastfingers.com/competitions'
+let qmark y = 'https://www.youtube.com/dashboard?o=U'
+
+" >> search
+
+let defaultengine = 'duckduckgo'
+let searchlimit   = 5
+
+let searchalias v   = 'vivaldi'
+let searchalias gh  = 'github'
+let searchalias aw  = 'archwiki'
+let searchalias sc  = 'shellcheck'
+let searchalias spc = 'sublimepackage'
+let searchalias sud = 'sublimedocs'
+let searchalias r   = 'reddit'
+let searchalias 4   = 'chan4'
+let searchalias js  = 'greasyfork'
+let searchalias dv  = 'deviantart'
+let searchalias mus = 'allmusic'
+let searchalias mc  = 'minecraft'
+
+let searchalias d   = 'duckduckgo'
+let searchalias u   = 'urbandictionary'
+let searchalias g   = 'google'
+let searchalias w   = 'wikipedia'
+let searchalias y   = 'youtube'
+let searchalias i   = 'imdb'
+let searchalias amz = 'amazon'
+
+let completionengines = ['duckduckgo','urbandictionary','google','wikipedia','youtube','imdb','woflramalpha','amazon']
+
+let searchengine aur            = 'https://aur.archlinux.org/packages/?O=0&SeB=n&K=%s&outdated=&SB=l&SO=a&PP=50&do_Search=Go'
+let searchengine vivaldi        = ['vivaldi://chrome-urls/', 'vivaldi://%s']
+let searchengine github         = ['https://github.com', 'https://github.com/search?q=%s']
+let searchengine archwiki       = ['https://wiki.archlinux.org', 'https://wiki.archlinux.org/index.php?search=%s&title=Special%3ASearch&go=Go']
+let searchengine shellcheck     = 'https://github.com/koalaman/shellcheck/wiki/SC%s'
+let searchengine forked         = ['http://forked.yannick.io', 'http://forked.yannick.io/%s']
+let searchengine style          = 'https://userstyles.org/styles/browse?search_terms=%s'
+let searchengine sublimepackage = 'https://packagecontrol.io/search?terms=%s'
+let searchengine sublimedocs    = 'http://docs.sublimetext.info/en/latest/search.html?q=%s&check_keywords=yes&area=default'
+let searchengine reddit         = ['https://old.reddit.com', 'https://old.reddit.com/r/%s/']
+let searchengine chan4          = 'https://boards.4chan.org/%s/catalog'
+let searchengine greasyfork     = 'https://greasyfork.org/en/scripts?utf8=%E2%9C%93&q=%s'
+let searchengine wayback        = 'http://web.archive.org/web/*/%s'
+let searchengine tpb            = 'https://thepiratebay.org/search/%s/0/7/0'
+let searchengine deviantart     = 'http://www.deviantart.com/?q=%s'
+let searchengine allmusic       = 'http://www.allmusic.com/search/all/%s'
+let searchengine minecraft      = 'https://minecraft.gamepedia.com/index.php?search=%s&title=Special%3ASearch&go=Go'
+
+" >> settings
+
+let hintcharacters = 'asdfghjkl'
+
+" animate link hints as they appear  
+set scalehints
+
+" show fade effect when link hints open and close
+set linkanimations
+
+set smoothscroll
+let scrollduration = 100
+let scrollstep = 150
+
+set noautofocus
+
+" set nochangelog
+set showtabindices
+let barposition = 'bottom'
+
+" syntax:ssDquote
+let COMMANDBARCSS = '#cVim-command-bar, #cVim-command-bar-mode, #cVim-command-bar-input, #cVim-command-bar-search-results,.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left,.cVim-completion-item .cVim-right {  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;  font-size: 10pt !important;  -webkit-font-smoothing: antialiased !important;}#cVim-command-bar {  position: fixed;  z-index: 2147483646;  background-color: #FFF000;  color: #bbb;  display: none;  box-sizing: content-box;  box-shadow: 0 3px 3px rgba(0,0,0,0.4);  left: 0;  width: 100%;  height: 20px;}#cVim-command-bar-mode {  display: inline-block;  vertical-align: middle;  box-sizing: border-box;  padding-left: 2px;  height: 100%;  width: 10px;  padding-top: 2px;  color: #888;}#cVim-command-bar-input {  background-color: #1b1d1e;  color: #bbb;  height: 100%;  right: 0;  top: 0;  width: calc(100% - 10px);  position: absolute;}#cVim-command-bar-search-results {  position: fixed;  width: 100%;  overflow: hidden;  z-index: 2147483647;  left: 0;  box-shadow: 0 3px 3px rgba(0,0,0,0.4);  background-color: #1c1c1c;}.cVim-completion-item, .cVim-completion-item .cVim-full, .cVim-completion-item .cVim-left, .cVim-completion-item .cVim-right {  text-overflow: ellipsis;  padding: 1px;  display: inline-block;  box-sizing: border-box;  vertical-align: middle;  overflow: hidden;  white-space: nowrap;}.cVim-completion-item:nth-child(even) {  background-color: #1f1f1f;}.cVim-completion-item {  width: 100%; left: 0;  color: #bcbcbc;}.cVim-completion-item[active] {  width: 100%; left: 0;  color: #1b1d1e;  background-color: #f1f1f1;}.cVim-completion-item[active] span {  color: #1b1d1e;}.cVim-completion-item .cVim-left {  color: #fff;  width: 37%;}.cVim-completion-item .cVim-right {  font-style: italic;  color: #888;  width: 57%;}#cVim-link-container, .cVim-link-hint,#cVim-hud, #cVim-status-bar {  font-family: Helvetica, Helvetica Neue, Neue, sans-serif, monospace, Arial;  font-size: 10pt !important;  -webkit-font-smoothing: antialiased !important;}#cVim-link-container {  position: absolute;  pointer-events: none;  width: 100%; left: 0;  height: 100%; top: 0;  z-index: 2147483647;}.cVim-link-hint {  position: absolute;  color: #302505 !important;  background-color: #ffd76e !important;  border-radius: 2px !important;  padding: 2px !important;  font-size: 8pt !important;  font-weight: 500 !important;  text-transform: uppercase !important;  border: 1px solid #ad810c;  display: inline-block !important;  vertical-align: middle !important;  text-align: center !important;  box-shadow: 2px 2px 1px rgba(0,0,0,0.25) !important;}.cVim-link-hint_match {  color: #777;  text-transform: uppercase !important;}#cVim-hud {  background-color: rgba(28,28,28,0.9);  position: fixed !important;  transition: right 0.2s ease-out;  z-index: 24724289;}#cVim-hud span {  padding: 2px;  padding-left: 4px;  padding-right: 4px;  color: #8f8f8f;  font-size: 10pt;}#cVim-frames-outline {  position: fixed;  width: 100%;  height: 100%;  left: 0;  top: 0;  right: 0;  z-index: 9999999999;  box-sizing: border-box;  border: 3px solid yellow;}'

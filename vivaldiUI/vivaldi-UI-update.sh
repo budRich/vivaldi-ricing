@@ -5,7 +5,7 @@
 _thisscript="$(readlink -f "${BASH_SOURCE[0]}")"
 _name="${_thisscript##*/}"
 _scriptdir="${_thisscript%/*}"
-_moddir="$_scriptdir/vivaldiUI"
+_moddir="$_scriptdir"
 
 _optdir='/opt/vivaldi/resources/vivaldi'
 _optfile="$_optdir/browser.html"

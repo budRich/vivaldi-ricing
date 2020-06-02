@@ -6,17 +6,17 @@ a modified version of cvim_server.py orginially
 created by 1995eaton
 https://github.com/1995eaton/chromium-vim/blob/master/cvim_server.py
 
-USAGE: ./cvim_server.py
-If you want to use native Vim to edit text boxes
-you must be running this script. To begin editing,
-first map the editWithVim (e.g. "imap <C-o> editWithVim") mapping.
-By default, this script will spawn a gvim ("gvim -f"), but this action
-can be changed by setting the VIM_COMMAND variable below
+USAGE: ./cvim_server.py If you want to use native
+Vim to edit text boxes you must be running this
+script. To begin editing, first map the
+editWithVim (e.g. "imap <C-o> editWithVim")
+mapping.
 
 -- additional notes from budRich
-OBS! VIM_COMMAND is renamed VB4C_VIM_COMMAND, which
-defaults to the environment variable with the same name.
-Or "gvim -f" if not set.
+
+VB4C_VIM_COMMAND, which defaults to the
+environment variable with the same name. Or "gvim
+-f" if not set.
 
 This version will instead execute a command if the
 first word posted in a message to the server matches
@@ -92,7 +92,7 @@ def edit_file(content):
     return text
 
 
-class CvimServer(BaseHTTPRequestHandler):
+class Vb4cServer(BaseHTTPRequestHandler):
 
     def do_POST(self):
         length = int(self.headers['Content-Length'])
@@ -111,7 +111,7 @@ class CvimServer(BaseHTTPRequestHandler):
             pass
 
         elif brwschk[0] == VB4C_EXEC_WORD:
-            subprocess.call(brwschk[1:])
+            subprocess.Popen(brwschk[1:])
 
         else:
             edit = edit_file(content['data'])
@@ -121,7 +121,7 @@ class CvimServer(BaseHTTPRequestHandler):
 
 def init_server(server_class=HTTPServer, handler_class=BaseHTTPRequestHandler):
     server_address = ('127.0.0.1', VB4C_PORT)
-    httpd = server_class(server_address, CvimServer)
+    httpd = server_class(server_address, Vb4cServer)
     httpd.serve_forever()
 
 

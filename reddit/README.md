@@ -29,10 +29,14 @@ If you have [stylus] and [violentmonkey] installed you can install the files by 
 
 For this rice to work ~~correctly~~, one must first make sure that reddit is displayed in it's ~~good~~ old way, and disable any subreddit specific userstyles.  
 
-The *easiest* way to achieve that is to install these two external **userscripts**:  
-[reddit old school] - this will redirect any visits to nu-reddit to old.reddit.com, and includes a couple of enhancements (page will scroll to the latest expanded item, and such). It *just werks™*.  
+I use the extension [Redirector](http://einaregilsson.com/redirector/) to redirect any URL to *modern* reddit to `old.reddit`.  
 
-[reddit toggle custom css] lets you toggle between the default CSS and subreddit specific CSS from the (grease|tamper|violent)-monkey menu. (selection is remembered across sessions). 
+![](redirector.png) 
+
+`https://(www[.])?reddit[.]com(.*)`
+
+
+[reddit toggle custom css] is a user script that lets you toggle between the default CSS and subreddit specific CSS from the (grease|tamper|violent)-monkey menu. (selection is remembered across sessions). 
 However the default is to show subreddit specific css, 
 but that can be inversed by changing the line:  
 `const DISABLE_CSS = false`  
