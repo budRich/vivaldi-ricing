@@ -33,7 +33,7 @@ javascript overrides are not fully supported and there are several drawbacks one
 - Changes done in this directory are systemwide and will affect all users and profiles in vivaldi.
 - the directory is owned by **root** so you need sudo privileges to make changes.
 
-To simplify the process of adding and updating (this needs to be done on every update of the browser) there is a script in the [js](/js/) directory called [vivaldi-add-js.sh](/vivaldiUI/js/vivaldi-add-js.sh). When the script is executed it will add all `.js` files in the same directory as the script. 
+To simplify the process of adding and updating (this needs to be done on every update of the browser) there is a script in the [js](./js/) directory called [vivaldi-add-js.sh](/vivaldiUI/js/vivaldi-add-js.sh). When the script is executed it will add all `.js` files in the same directory as the script. 
 
 # Known Issues
 if you apply [ext-in-status.js](/js/ext-in-status.js) be aware that fullscreen functionality will stop working. A workaround is to use **picture-in-picture** mode and fullscreen the external player (imo this works better then the default fullscreen).  
