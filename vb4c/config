@@ -68,7 +68,7 @@ let defaultengine = 'duckduckgo'
 let searchlimit   = 5
 
 let searchalias v   = 'vivaldi'
-let searchalias gh  = 'github'
+let searchalias gh  = 'githubgo'
 let searchalias aw  = 'archwiki'
 let searchalias sc  = 'shellcheck'
 let searchalias spc = 'sublimepackage'
@@ -93,6 +93,7 @@ let completionengines = ['duckduckgo','urbandictionary','google','wikipedia','yo
 let searchengine aur            = 'https://aur.archlinux.org/packages/?O=0&SeB=n&K=%s&outdated=&SB=l&SO=a&PP=50&do_Search=Go'
 let searchengine vivaldi        = ['vivaldi://chrome-urls/', 'vivaldi://%s']
 let searchengine github         = ['https://github.com', 'https://github.com/search?q=%s']
+let searchengine githubgo       = ['https://github.com', 'https://github.com/%s']
 let searchengine archwiki       = ['https://wiki.archlinux.org', 'https://wiki.archlinux.org/index.php?search=%s&title=Special%3ASearch&go=Go']
 let searchengine shellcheck     = 'https://github.com/koalaman/shellcheck/wiki/SC%s'
 let searchengine forked         = ['http://forked.yannick.io', 'http://forked.yannick.io/%s']
