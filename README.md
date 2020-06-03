@@ -6,7 +6,7 @@ Vivaldi is a very *rice friendly* browser and much of the my rice can be achieve
 
 ### optimized for use with a tiling window manager
 
-[vialdi-launch.sh] is the script I use to launch/activate the browser. It uses **xdotool(1)** (or [i3run] if it is installed) to rename the class of the *main window*. The reason I want to do this is that I can easily apply window rules and keybindings from my window manager. I use [i3wm] and by having one window rule for the main window and another rule for vivaldi windows without a custom class (`Vivaldi-stable`) i get a better tiled experience.  
+[vivaldi-launch.sh] is the script I use to launch/activate the browser. It uses **xdotool(1)** (or [i3run] if it is installed) to rename the class of the *main window*. The reason I want to do this is that I can easily apply window rules and keybindings from my window manager. I use [i3wm] and by having one window rule for the main window and another rule for vivaldi windows without a custom class (`Vivaldi-stable`) i get a better tiled experience.  
 
 In the screenshot above the main vivaldi window is to the left and I have just opened the settings window (<key>Ctrl</key>+<key>F12</key>).
 The setting window will have the default window class set by Vivaldi, `Vivaldi-stable` and it is automatically placed in the lower right container (**D**), and this is true for any *extra* window that would get created, f.i. **devtools** or **stylish style editor**. Here I also play a video using the **picture in picture** functionality, and that window also have a rule and will always get placed in the upper right corner (**B**).

@@ -2,7 +2,7 @@
 
 I don't have a reddit account, I think the modern design is slow and bloated and I have a little too much time to waste, this is my reddit rice.  
 
-![](scrotcomp.png)  
+![](/img/scrotcomp.png)  
 
 I have tried to make it as modular as possible and separated each *feature* into its own **user.css (_userstyle_)** or **user.js (_userscript_)**. The subdirectories here contain the files and maybe a screenshot, maybe.  
 
@@ -31,7 +31,7 @@ For this rice to work ~~correctly~~, one must first make sure that reddit is dis
 
 I use the extension [Redirector](http://einaregilsson.com/redirector/) to redirect any URL to *modern* reddit to `old.reddit`.  
 
-![](redirector.png) 
+![](/img/redirector.png) 
 
 `https://(www[.])?reddit[.]com(.*)`
 
