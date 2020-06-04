@@ -1,20 +1,20 @@
+" when vivaldi is started with vivaldi-launch.sh
+" the variables below (homedirectory, config, vimport, EXEC_WORD)
+" will get updated according to the environment
+" automatically.
+
 let homedirectory = '/home/bud'
-let @@config = '~/git/bud/vivaldi-ricing/vb4c/config'
+let @@config     '~/git/bud/vivaldi-ricing/vb4c/config'
 let configpath = @@config
 map <A-r> :source @@config<CR>
 set localconfig
-
-site '*://app.pluralsight.com/course-player*' {
-      unmap k
-}
-
 
 let vimport = 8054
 
 externalCommand(link) -> {{
 
-  const COMMAND   = 'gurl'
-  const EXEC_WORD = 'secretpassword'
+const COMMAND = 'gurl'
+const EXEC_WORD = 'secretpassword'
 
   const FIELD_SEPARATOR  = "\x1c"
   const URL = (link ? link.href || link.value : document.URL)
@@ -96,7 +96,6 @@ let searchengine github         = ['https://github.com', 'https://github.com/sea
 let searchengine githubgo       = ['https://github.com', 'https://github.com/%s']
 let searchengine archwiki       = ['https://wiki.archlinux.org', 'https://wiki.archlinux.org/index.php?search=%s&title=Special%3ASearch&go=Go']
 let searchengine shellcheck     = 'https://github.com/koalaman/shellcheck/wiki/SC%s'
-let searchengine forked         = ['http://forked.yannick.io', 'http://forked.yannick.io/%s']
 let searchengine style          = 'https://userstyles.org/styles/browse?search_terms=%s'
 let searchengine sublimepackage = 'https://packagecontrol.io/search?terms=%s'
 let searchengine sublimedocs    = 'http://docs.sublimetext.info/en/latest/search.html?q=%s&check_keywords=yes&area=default'

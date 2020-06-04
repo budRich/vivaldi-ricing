@@ -19,10 +19,12 @@ environment variable with the same name. Or "gvim
 -f" if not set.
 
 This version will instead execute a command if the
-first word posted in a message to the server matches
-EXEC_WORD and exectute the rest of the message as a command.
+first word posted in a message to the server
+matches EXEC_WORD and exectute the rest of the
+message as a command.
 
-below is an example from my cvimrc (VB4C_EXEC_WORD = brwscon)
+below is an example from my cvimrc 
+(VB4C_EXEC_WORD = brwscon)
 that will execute 'notify-send' with a URL as the only
 argument. (S : current page, s : from hint)
 ...

@@ -6,6 +6,7 @@ _dir=${_this%/*}
 : "${VIVALDI_COMMAND:=vivaldi-stable}"
 : "${VB4C_PORT:=8054}"
 : "${VB4C_EXEC_WORD:=secretpassword}"
+: "${VB4C_EXEC_COMMAND:=gurl}"
 : "${VB4C_VIM_COMMAND:='sublaunch --profile subltmp --wait'}"
 : "${VB4C_PATH:=$_dir/vb4c/vb4c_server.py}"
 
@@ -81,8 +82,33 @@ togglebrowser() {
   ((_debug)) && [[ -z $wid ]] \
     && browsercmd=(urxvt -name browser -e bash -c "'${browsercmd[*]}'")
 
-  if command -v i3run > /dev/null ; then
+  # update vb4c config file if main window doesnt
+  # exist and vb4c config file is in same dir as
+  # vb4c_server.py
+  local rc t
+  [[ -z $wid && -f ${rc:=${VB4C_PATH%/*}/config} ]] && {
+    
+    export VB4C_PORT
+    export VB4C_EXEC_WORD
+    export VB4C_EXEC_COMMAND
+    export VB4C_VIM_COMMAND
 
+    t=$(mktemp)
+
+    awk -v rcf="${rc/~/'~'}" '
+      BEGIN { sq="'\''" }
+      mod != 1 && $2 == "homedirectory" {$4=sq ENVIRON["HOME"] sq}
+      mod != 1 && $2 == "@@config"      {sub($3 ".*"," " sq rcf sq)}
+      mod != 1 && $2 == "vimport"       {$4=ENVIRON["VB4C_PORT"]}
+      mod != 1 && $2 == "COMMAND"       {$4=sq ENVIRON["VB4C_EXEC_COMMAND"] sq}
+      mod != 1 && $2 == "EXEC_WORD"     {$4=sq ENVIRON["VB4C_EXEC_WORD"] sq}
+      mod != 1 && $2 == "FIELD_SEPARATOR" {mod=1}    
+      {print}
+    ' "$rc" > "$t" && mv -f "$t" "$rc"
+  }
+
+  if command -v i3run > /dev/null ; then
+    :
     i3run ${_url:+--nohide}         \
                   --class "$rename" \
                   --rename "$class" \
