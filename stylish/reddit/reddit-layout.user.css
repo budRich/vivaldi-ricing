@@ -7,14 +7,26 @@
 ==/UserStyle== */
 
 @-moz-document domain("reddit.com") {
+
   #siteTable, .content {
     width: 70vw;
     max-width: 666px;
     margin: auto;
     display: flex;
     flex-direction: column;
+    height: 22px;          
   }
-  
+
+  .content {
+    padding-top: 40px;
+  }
+      
+  #header {
+      position: fixed;
+      width: 100vw;
+      height: auto;
+      display: flex;
+  }
   
   .score.unvoted { display: block ; text-align: right; }
   .midcol {float: right ; padding-top: 5px; }
