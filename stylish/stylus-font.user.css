@@ -1,0 +1,13 @@
+/* ==UserStyle==
+@name           Stylus - dashboard font
+@namespace      github.com/budrich
+@version        1.0.0
+@description    system-ui is problematic as a browser font, the default to sans-serif
+@author         budRich
+==/UserStyle== */
+
+@-moz-document url-prefix("chrome-extension://clngdbkpkpeebahjckkjfobafhncgmne/manage.html") {
+body {
+    font: normal 12px sans-serif, system-ui, sans-serif;
+}
+}

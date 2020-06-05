@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           reddit - no bloat
 @namespace      budlabs
-@version        1.0.1
+@version        1.0.2
 @description    hides ad and "promoted" elements
 @author         budrich
 @updateURL https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-no-bloat.user.css
@@ -11,6 +11,7 @@
   .ad-container,
   .promotedlink,
   #header-img,
-  .footer.rounded
+  .footer.rounded,
+  .rank
   { display: none !important;}
 }
