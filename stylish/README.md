@@ -2,9 +2,4 @@ This directory contains **userstyles** and **userscripts** I use. The two main e
 
 | icon | extension | description | links |
 |:-----|:----------|:------------|:------|
-|![](/img/stylusicon.png) | stylus |
-Inject `user.css` for sites.  
-a fork of stylish, which has turned into a botnet. |
-[Official site](.)  
-[Chrome Webstore](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)  
-[GitHub repo](.) |
+|![](/img/stylusicon.png) | stylus | Inject `user.css` for sites.<br/> a fork of stylish, which has turned into a botnet. | [Official site](.)<br/>[Chrome Webstore](https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)<br/>[GitHub repo](.) |
