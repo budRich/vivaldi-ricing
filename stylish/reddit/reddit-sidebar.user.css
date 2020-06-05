@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    Hides the sidebar by default and adds a button to toggle it + some aesthethic improvements.
 @author         budRich
+@updateURL https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-sidebar.user.css
 ==/UserStyle== */
 
 @-moz-document domain("reddit.com") {

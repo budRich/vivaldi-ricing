@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    Hides elements that are of no use without a reddit account
 @author         budRich
+@updateURL https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-no-account.user.css
 ==/UserStyle== */
 
 @-moz-document domain("reddit.com") {

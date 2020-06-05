@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    hides ad and "promoted" elements
 @author         budrich
+@updateURL https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-no-bloat.user.css
 ==/UserStyle== */
 
 @-moz-document domain("reddit.com") {

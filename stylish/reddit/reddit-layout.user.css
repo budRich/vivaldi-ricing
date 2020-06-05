@@ -4,6 +4,7 @@
 @version        1.0.0
 @description    aesthetic fixes for old.reddit.com
 @author         budRich
+@updateURL https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-layout.user.css
 ==/UserStyle== */
 
 @-moz-document domain("reddit.com") {
