@@ -5,7 +5,7 @@ https://github.com/openstyles/stylus/wiki
 
 |   | extension | description |
 |:-:|:----------|:------------|
-|![](/img/stylusicon.png)|**stylus**</br>[Official site][stylus-site] ![][external link]<br/>[Chrome Webstore][stylus-chrome] ![][external link]<br/>[GitHub repo][stylus-github] ![][external link]| Inject `user.css` for sites. a fork of stylish, which has turned into a botnet. 
+|![](/img/stylusicon.png)|**stylus**</br>[Official site][stylus-site] ![](https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png)<br/>[Chrome Webstore][stylus-chrome] ![](https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png)<br/>[GitHub repo][stylus-github] ![](https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png)| Inject `user.css` for sites. a fork of stylish, which has turned into a botnet. 
 
 [external link]:https://user-images.githubusercontent.com/136959/44433186-de548e80-a56a-11e8-8947-d3331bd6d7a1.png
 [stylus-chrome]: https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne (Chrome Webstore)
