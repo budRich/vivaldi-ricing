@@ -1,10 +1,10 @@
-![](scrot.png)
+![](/img/scrot.png)
 
 This is how I like my vivaldi, I merge all *important* elements from the addressbar in to the statusbar and then hide the addressbar (i get the actual address functionality with [vb4c](../vb4c)).
 
 I also have **settings->Appearance->User Interface Zoom** set to `80%` to get a even more space for actual content.
 
-![](uisettings.png)
+![](/img/uisettings.png)
 
 All UI is done with HTML, javascript and CSS.
 The UI can be *inspected* like any other webpage (right click an element, f.i. the address bar and select **Inspect**) 
@@ -20,11 +20,11 @@ if vivaldi is started with the following commandline options:
 to override the CSS for the UI in Vivaldi, one must:
 
 enable the feature on [vivaldi://experiments](vivaldi://experiments)  
-![](experiments.png)  
+![](/img/experiments.png)  
 
 set the directory where the css files are stored in **settings->Appearance->Custom UI Modifications** (*it's easiest to just search for `custom ui`*)  
 
-![](cssdir.png)
+![](/img/cssdir.png)
 
 Vivaldi will apply all styles in all CSS files in the selected folder when the browser is launched. It is really easy to maintain styles, but one needs to restart the browser for any changes or new styles to apply. In the [css](./css) directory are some styles.
 
