@@ -2,9 +2,7 @@
 
 I don't have a reddit account, I think the modern design is slow and bloated and I have a little too much time to waste, this is my reddit rice.  
 
-![](/img/scrotcomp.png)  
-
-I have tried to make it as modular as possible and separated each *feature* into its own **user.css (_userstyle_)** or **user.js (_userscript_)**. The subdirectories here contain the files and maybe a screenshot, maybe.  
+I have tried to make it as modular as possible and separated each *feature* into its own **user.css (_userstyle_)** or **user.js (_userscript_)**.   
 
 If you have [stylus] and [violentmonkey] installed you can install the files by clicking the links in the table below:  
 
@@ -17,13 +15,13 @@ If you have [stylus] and [violentmonkey] installed you can install the files by 
 [reddit-sidebar.user.css] | Hides the sidebar by default and adds a button to toggle it + some aesthetic improvements. |
 [reddit-no-bloat.user.css] | hides ad and "promoted" elements |
 [reddit-no-account.user.css] | Hides elements that are of no use without a reddit account |
-[reddit-dirthack.user.css] | aesthetic fixes that works with, expando-swap.user.js |
+[reddit-layout.user.css] | aesthetic fixes that completely optional |
 
-[reddit-dirthack.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-dirthack.user.css
-[reddit-no-account.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-no-account.user.css
-[reddit-no-bloat.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-no-bloat.user.css
-[reddit-sidebar.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-sidebar.user.css
-[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/reddit/reddit-theme.user.css
+[reddit-layout.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-layout.user.css
+[reddit-no-account.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-no-account.user.css
+[reddit-no-bloat.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-no-bloat.user.css
+[reddit-sidebar.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-sidebar.user.css
+[reddit-theme.user.css]: https://github.com/budRich/vivaldi-ricing/raw/master/stylish/reddit/reddit-theme.user.css
 
 ## but first, return to the past
 
