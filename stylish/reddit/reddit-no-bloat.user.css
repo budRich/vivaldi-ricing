@@ -10,7 +10,6 @@
   .ad-container,
   .promotedlink,
   #header-img,
-  .footer.rounded,
-  .rank
+  .footer.rounded
   { display: none !important;}
 }
