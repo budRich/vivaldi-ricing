@@ -4,7 +4,7 @@
 " automatically.
 
 let homedirectory = '/home/bud'
-let @@config          '~/git/bud/vivaldi-ricing/vb4c/config'
+let @@config                                                                                                                                                                  '~/git/bud/vivaldi-ricing/vb4c/config'
 let configpath = @@config
 map <A-r> :source @@config<CR>
 set localconfig
